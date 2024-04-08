@@ -63,6 +63,7 @@ IP-CIDR,47.80.0.0/12,no-resolve
 IP-CIDR,49.79.0.0/12,no-resolve
 IP-CIDR,58.49.0.0/12,no-resolve
 IP-CIDR,59.82.0.0/20,no-resolve
+IP-CIDR,59.82.33.0/20,no-resolve
 IP-CIDR,59.82.240.0/21,no-resolve
 IP-CIDR,59.82.248.0/22,no-resolve
 IP-CIDR,72.254.0.0/16,no-resolve
