@@ -1,0 +1,56 @@
+#!name= talkatone
+#!desc= 去广告｜让登录更简单\n\n需要让这个域名代理\nDOMAIN-SUFFIX,tktn.be
+#!author: axin-Under
+#!system= ios
+#!category= axin
+#!date= 2024-05-16 17:12:56
+
+
+
+[Script]
+throttle-rewrite = type=http-response,pattern=^https:\/\/gum\.criteo\.com\/appevent\/v1\/2379\?.*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/axinhouzilaoyue/myScript/main/surge/throttle-rewrite.js
+
+
+[URL Rewrite]
+# ^https:\/\/aax-fe-sin\.amazon-adsystem\.com\/x\/px\/p\/.+\/\{.+?\} - reject
+# ^https?:\/\/httpdns\.music\.163\.com - reject
+
+
+[Rule]
+# 去广告
+DOMAIN-SUFFIX,ads.inmobi.com,REJECT
+DOMAIN-SUFFIX,tappx.com,REJECT
+DOMAIN-SUFFIX,criteo.com,REJECT
+DOMAIN-SUFFIX,pubmatic.com,REJECT
+DOMAIN-SUFFIX,smaato.net,REJECT
+DOMAIN-SUFFIX,amazon-adsystem.com,REJECT
+DOMAIN-KEYWORD,googleads,REJECT
+DOMAIN-SUFFIX,adsappier.com,REJECT
+DOMAIN-SUFFIX,appier.net,REJECT
+DOMAIN-SUFFIX,appiersig.com,REJECT
+
+# 让登录更容易
+DOMAIN-SUFFIX,mobilefuse.com,🏠回家邦
+DOMAIN-SUFFIX,inmobi.com,🏠回家邦
+DOMAIN-SUFFIX,crashlytics.com,🏠回家邦
+DOMAIN-SUFFIX,talkatone.com,🏠回家邦
+DOMAIN-SUFFIX,kochava.com,🏠回家邦
+# 这个域名最好走代理，我这边直连已超时
+DOMAIN-SUFFIX,tktn.be,✈️ 节点选择
+DOMAIN-SUFFIX,cohere.com,🏠回家邦
+DOMAIN-SUFFIX,ip-api.com,🏠回家邦
+DOMAIN-SUFFIX,agkn.com,🏠回家邦
+DOMAIN-SUFFIX,tktn.at,🏠回家邦
+IP-CIDR,50.117.27.0/24,🏠回家邦
+IP-CIDR,69.46.75.0/24,🏠回家邦
+IP-CIDR,205.164.56.0/24,🏠回家邦
+IP-CIDR,63.251.124.0/24,🏠回家邦
+
+# DOMAIN,,REJECT-NO-DROP
+
+
+[Map Local]
+
+
+[MITM]
+hostname = %APPEND% gum.criteo.com
