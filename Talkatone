@@ -1,4 +1,3 @@
-[Rule]
 # 去广告
 DOMAIN-SUFFIX,ads.inmobi.com,REJECT
 DOMAIN-SUFFIX,tappx.com,REJECT
